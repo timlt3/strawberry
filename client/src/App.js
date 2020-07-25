@@ -34,6 +34,7 @@ class App extends Component {
 
             // Set web3, accounts, and contract to the state, and then proceed with an
             // example of interacting with the contract's methods.
+            this.listenToPaymentEvent();
             this.setState({ loaded: true });
         } catch (error) {
             // Catch any errors for any of the above operations.
@@ -42,6 +43,21 @@ class App extends Component {
             );
             console.error(error);
         }
+    };
+
+    listenToPaymentEvent = () => {
+        let self = this;
+        this.strawberryManager.events
+            .SupplyChainPhase()
+            .on("data", async function (evt) {
+                console.log(evt);
+                //if (evt.returnValues._phase === 3) {
+                let itemObj = await self.strawberryManager.methods
+                    .strawberries(evt.returnValues._strawberryIndex)
+                    .call();
+                alert("strawberry " + itemObj._identifier + " has been paid");
+                //}
+            });
     };
 
     handleSubmit = async () => {
@@ -95,6 +111,8 @@ class App extends Component {
                     {" "}
                     Create new item{" "}
                 </button>
+                <h2> Number of strawberries: </h2>{" "}
+                {this.strawberryManager.strawberryIndex}
             </div>
         );
     }
