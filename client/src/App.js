@@ -93,26 +93,40 @@ class App extends Component {
                 <h1>Strawberry Supplychain</h1>
                 <h2>Strawberries</h2>
                 <h2>Add Strawberries</h2>
-                Cost in Wei:{" "}
-                <input
-                    type="text"
-                    name="cost"
-                    value={this.state.cost}
-                    onChange={this.handleInputChange}
-                />
-                Strawberry Identifier:{" "}
-                <input
-                    type="text"
-                    name="strawberryName"
-                    value={this.state.strawberryName}
-                    onChange={this.handleInputChange}
-                />
-                <button type="button" onClick={this.handleSubmit}>
-                    {" "}
-                    Create new item{" "}
-                </button>
-                <h2> Number of strawberries: </h2>{" "}
-                {this.strawberryManager.strawberryIndex}
+                <div>
+                    Cost in Wei:{" "}
+                    <input
+                        type="text"
+                        name="cost"
+                        value={this.state.cost}
+                        onChange={this.handleInputChange}
+                    />
+                    Strawberry Identifier:{" "}
+                    <input
+                        type="text"
+                        name="strawberryName"
+                        value={this.state.strawberryName}
+                        onChange={this.handleInputChange}
+                    />
+                    <button type="button" onClick={this.handleSubmit}>
+                        {" "}
+                        Create new item{" "}
+                    </button>
+                </div>
+
+                <div>
+                    Strawberry ID :{" "}
+                    <input
+                        type="text"
+                        name="cost"
+                        value=""
+                        onChange={this.handleInputChange}
+                    />
+                    <button type="button" onClick={this.handleSubmit}>
+                        {" "}
+                        Finish Processing{" "}
+                    </button>{" "}
+                </div>
             </div>
         );
     }
