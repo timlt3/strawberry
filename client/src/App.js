@@ -19,11 +19,14 @@ class App extends Component {
             // Get the contract instance.
             const { networkId } = await this.web3.eth.net.getId();
 
+            console.log(StrawberryManager.address);
             this.strawberryManager = new this.web3.eth.Contract(
                 StrawberryManager.abi,
-                StrawberryManager.networks[networkId] &&
-                    StrawberryManager.address
+                //StrawberryManager.networks[networkId] &&
+                "0x6a0e49a6cb4ddf6f8a4294b0718a444b1a334e75"
             );
+            console.log("hi!");
+            console.log(StrawberryManager.address);
             this.strawberry = new this.web3.eth.Contract(
                 Strawberry.abi,
                 Strawberry.networks[networkId] && Strawberry.address
@@ -41,17 +44,10 @@ class App extends Component {
         }
     };
 
-    handleInputChange = (event) => {
-        const target = event.target;
-        const value =
-            target.type === "checkbox" ? target.checked : target.value;
-        const name = target.name;
-        this.setState({ [name]: value });
-    };
-
     handleSubmit = async () => {
         const { cost, strawberryName } = this.state;
         console.log(strawberryName, cost, this.strawberryManager);
+        console.log(this.strawberryManager.address);
         let result = await this.strawberryManager.methods
             .createStrawberry(strawberryName, cost)
             .send({ from: this.accounts[0] });
@@ -62,6 +58,14 @@ class App extends Component {
                 " Wei to " +
                 result.events.SupplyChainPhase.returnValues._address
         );
+    };
+
+    handleInputChange = (event) => {
+        const target = event.target;
+        const value =
+            target.type === "checkbox" ? target.checked : target.value;
+        const name = target.name;
+        this.setState({ [name]: value });
     };
 
     render() {

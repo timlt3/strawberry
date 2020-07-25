@@ -69,7 +69,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [
@@ -100,7 +101,8 @@
       "name": "triggerPayment",
       "outputs": [],
       "stateMutability": "payable",
-      "type": "function"
+      "type": "function",
+      "payable": true
     },
     {
       "inputs": [
@@ -8798,9 +8800,50 @@
     "name": "solc",
     "version": "0.6.1+commit.e6f7d5a4.Emscripten.clang"
   },
-  "networks": {},
+  "networks": {
+    "5777": {
+      "events": {
+        "0x986f85536d189a0de7bc7d7d6f9a321a17a3540eb246f8ac9afcf5240aabd09d": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "_strawberryIndex",
+              "type": "uint256"
+            },
+            {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "_phase",
+              "type": "uint256"
+            },
+            {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "_status",
+              "type": "uint256"
+            },
+            {
+              "indexed": false,
+              "internalType": "address",
+              "name": "_address",
+              "type": "address"
+            }
+          ],
+          "name": "SupplyChainPhase",
+          "type": "event",
+          "signature": "0x986f85536d189a0de7bc7d7d6f9a321a17a3540eb246f8ac9afcf5240aabd09d"
+        }
+      },
+      "links": {},
+      "address": "0x6A0e49A6cB4dDF6f8a4294b0718a444B1A334e75",
+      "transactionHash": "0xffe6553499833b2343047081ef40029ae79f7c9f36474f5df8bba6bd79c96e6c"
+    }
+  },
   "schemaVersion": "3.0.20",
-  "updatedAt": "2020-07-21T15:59:34.347Z",
+  "updatedAt": "2020-07-25T05:16:45.566Z",
+  "networkType": "ethereum",
   "devdoc": {
     "methods": {}
   },
