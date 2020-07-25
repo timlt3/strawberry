@@ -19,11 +19,14 @@ class App extends Component {
             // Get the contract instance.
             const { networkId } = await this.web3.eth.net.getId();
 
+            console.log(StrawberryManager.address);
             this.strawberryManager = new this.web3.eth.Contract(
                 StrawberryManager.abi,
-                StrawberryManager.networks[networkId] &&
-                    StrawberryManager.address
+                //StrawberryManager.networks[networkId] &&
+                "0x6a0e49a6cb4ddf6f8a4294b0718a444b1a334e75"
             );
+            console.log("hi!");
+            console.log(StrawberryManager.address);
             this.strawberry = new this.web3.eth.Contract(
                 Strawberry.abi,
                 Strawberry.networks[networkId] && Strawberry.address
@@ -31,6 +34,7 @@ class App extends Component {
 
             // Set web3, accounts, and contract to the state, and then proceed with an
             // example of interacting with the contract's methods.
+            this.listenToPaymentEvent();
             this.setState({ loaded: true });
         } catch (error) {
             // Catch any errors for any of the above operations.
@@ -41,17 +45,25 @@ class App extends Component {
         }
     };
 
-    handleInputChange = (event) => {
-        const target = event.target;
-        const value =
-            target.type === "checkbox" ? target.checked : target.value;
-        const name = target.name;
-        this.setState({ [name]: value });
+    listenToPaymentEvent = () => {
+        let self = this;
+        this.strawberryManager.events
+            .SupplyChainPhase()
+            .on("data", async function (evt) {
+                console.log(evt);
+                //if (evt.returnValues._phase === 3) {
+                let itemObj = await self.strawberryManager.methods
+                    .strawberries(evt.returnValues._strawberryIndex)
+                    .call();
+                alert("strawberry " + itemObj._identifier + " has been paid");
+                //}
+            });
     };
 
     handleSubmit = async () => {
         const { cost, strawberryName } = this.state;
         console.log(strawberryName, cost, this.strawberryManager);
+        console.log(this.strawberryManager.address);
         let result = await this.strawberryManager.methods
             .createStrawberry(strawberryName, cost)
             .send({ from: this.accounts[0] });
@@ -62,6 +74,14 @@ class App extends Component {
                 " Wei to " +
                 result.events.SupplyChainPhase.returnValues._address
         );
+    };
+
+    handleInputChange = (event) => {
+        const target = event.target;
+        const value =
+            target.type === "checkbox" ? target.checked : target.value;
+        const name = target.name;
+        this.setState({ [name]: value });
     };
 
     render() {
@@ -91,6 +111,8 @@ class App extends Component {
                     {" "}
                     Create new item{" "}
                 </button>
+                <h2> Number of strawberries: </h2>{" "}
+                {this.strawberryManager.strawberryIndex}
             </div>
         );
     }
