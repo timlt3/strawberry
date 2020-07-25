@@ -5,17 +5,17 @@ import "./StrawberryManager.sol";
 contract Strawberry {
     uint256 public priceInWei;
     uint256 public paidWei;
-    uint256 public index;
+    string public identifier;
 
     StrawberryManager parentContract;
 
     constructor(
         StrawberryManager _parentContract,
         uint256 _priceInWei,
-        uint256 _index
+        string memory _identifier
     ) public {
         priceInWei = _priceInWei;
-        index = _index;
+        identifier = _identifier;
         parentContract = _parentContract;
     }
 
@@ -24,7 +24,7 @@ contract Strawberry {
         require(paidWei == 0, "item paid already");
         paidWei += msg.value;
         (bool success, ) = address(parentContract).call.value(msg.value)(
-            abi.encodeWithSignature("triggerPayment(uint256)", index)
+            abi.encodeWithSignature("triggerPayment(string)", identifier)
         );
         require(success, "deliver did not work");
     }

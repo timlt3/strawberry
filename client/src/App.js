@@ -6,7 +6,7 @@ import getWeb3 from "./getWeb3";
 import "./App.css";
 
 class App extends Component {
-    state = { cost: 0, strawberryName: "example_1", loaded: false };
+    state = { cost: 0, strawberryName: "example_1", SID: "0", loaded: false };
 
     componentDidMount = async () => {
         try {
@@ -62,18 +62,19 @@ class App extends Component {
 
     handleSubmit = async () => {
         const { cost, strawberryName } = this.state;
+        console.log("deez nuts");
         console.log(strawberryName, cost, this.strawberryManager);
         console.log(this.strawberryManager.address);
         let result = await this.strawberryManager.methods
             .createStrawberry(strawberryName, cost)
             .send({ from: this.accounts[0] });
         console.log(result);
-        alert(
+        /*alert(
             "Send " +
                 cost +
                 " Wei to " +
                 result.events.SupplyChainPhase.returnValues._address
-        );
+        );*/
     };
 
     handleInputChange = (event) => {
@@ -82,6 +83,28 @@ class App extends Component {
             target.type === "checkbox" ? target.checked : target.value;
         const name = target.name;
         this.setState({ [name]: value });
+    };
+
+    //phase stuff
+    handleChange = (event) => {
+        this.setState({ SID: event.target.value });
+    };
+
+    //
+    handleMySubmit = async () => {
+        var SID = this.state.SID;
+        console.log("SID is");
+        console.log(SID);
+        console.log(this.accounts[0]);
+        let result = await this.strawberryManager.methods
+            .finishProcessing(SID)
+            .send({ from: this.accounts[0] });
+        console.log(result);
+        alert(
+            "Strawberry # " +
+                SID +
+                "Is done processing. Now entering packaging phase..."
+        );
     };
 
     render() {
@@ -118,11 +141,11 @@ class App extends Component {
                     Strawberry ID :{" "}
                     <input
                         type="text"
-                        name="cost"
-                        value=""
-                        onChange={this.handleInputChange}
+                        name="strawberryId"
+                        // value={this.state.strawberryName}
+                        onChange={this.handleChange}
                     />
-                    <button type="button" onClick={this.handleSubmit}>
+                    <button type="button" onClick={this.handleMySubmit}>
                         {" "}
                         Finish Processing{" "}
                     </button>{" "}
