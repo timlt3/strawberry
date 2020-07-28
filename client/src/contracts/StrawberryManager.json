@@ -679,7 +679,7 @@
                         "name": "this",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 467,
+                        "referencedDeclaration": 465,
                         "src": "977:4:2",
                         "typeDescriptions": {
                           "typeIdentifier": "t_contract$_StrawberryManager_$436",
@@ -4995,7 +4995,7 @@
                         "name": "this",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 467,
+                        "referencedDeclaration": 465,
                         "src": "977:4:2",
                         "typeDescriptions": {
                           "typeIdentifier": "t_contract$_StrawberryManager_$436",
@@ -8842,7 +8842,7 @@
     }
   },
   "schemaVersion": "3.0.20",
-  "updatedAt": "2020-07-25T05:16:45.566Z",
+  "updatedAt": "2020-07-28T04:09:51.439Z",
   "networkType": "ethereum",
   "devdoc": {
     "methods": {}

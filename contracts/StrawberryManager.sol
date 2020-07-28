@@ -7,7 +7,7 @@ import "./Strawberry.sol";
 
 /*is Ownable*/
 contract StrawberryManager {
-    enum Phases {Processed, Packaged, Delivered, Paid}
+    enum Phases {Processing, Packaging, Delivering, Paid}
     enum Status {Good, Warning, UnfitForSale}
 
     struct S_Strawberry {
@@ -40,7 +40,7 @@ contract StrawberryManager {
         strawberries[strawberryIndex]._strawberry = strawberry;
         strawberries[strawberryIndex]._identifier = _identifier;
         strawberries[strawberryIndex]._priceInWei = _priceInWei;
-        strawberries[strawberryIndex]._phase = Phases.Processed;
+        strawberries[strawberryIndex]._phase = Phases.Processing;
         strawberries[strawberryIndex]._status = Status.Good;
         emit SupplyChainPhase(
             strawberryIndex,
@@ -58,7 +58,7 @@ contract StrawberryManager {
             "only items are allowed to update themselves"
         );
         require(strawberry.priceInWei() == msg.value, "not fully paid yet");
-        require(strawberries[_index]._phase == Phases.Delivered);
+        require(strawberries[_index]._phase == Phases.Delivering);
         strawberries[_index]._phase = Phases.Paid;
         emit SupplyChainPhase(
             _index,
@@ -71,10 +71,10 @@ contract StrawberryManager {
     function package(uint256 _strawberryIndex) public {
         //perform checks like the user is allowed to change the phase
         require(
-            strawberries[_strawberryIndex]._phase == Phases.Processed,
+            strawberries[_strawberryIndex]._phase == Phases.Processing,
             "item is further in the chain"
         );
-        strawberries[_strawberryIndex]._phase = Phases.Packaged;
+        strawberries[_strawberryIndex]._phase = Phases.Packaging;
 
         emit SupplyChainPhase(
             _strawberryIndex,
@@ -87,10 +87,10 @@ contract StrawberryManager {
     function deliver(uint256 _strawberryIndex) public {
         //perform checks like the user is allowed to change the phase
         require(
-            strawberries[_strawberryIndex]._phase == Phases.Packaged,
+            strawberries[_strawberryIndex]._phase == Phases.Packaging,
             "item is further in the chain"
         );
-        strawberries[_strawberryIndex]._phase = Phases.Delivered;
+        strawberries[_strawberryIndex]._phase = Phases.Delivering;
 
         emit SupplyChainPhase(
             strawberryIndex,
