@@ -3,6 +3,9 @@ import StrawberryManager from "./contracts/StrawberryManager.json";
 import Strawberry from "./contracts/Strawberry.json";
 import getWeb3 from "./getWeb3";
 
+import { Processor } from "./components/Processor";
+import { Deliver } from "./components/Deliver";
+
 import "./App.css";
 
 class App extends Component {
@@ -11,6 +14,8 @@ class App extends Component {
     componentDidMount = async () => {
         try {
             // Get network provider and web3 instance.
+            console.log("app.js this");
+            console.log(this);
             this.web3 = await getWeb3();
 
             // Use web3 to get the user's accounts.
@@ -19,14 +24,16 @@ class App extends Component {
             // Get the contract instance.
             const { networkId } = await this.web3.eth.net.getId();
 
+            console.log("Within app.js ... strawberrymanager.address is : ");
             console.log(StrawberryManager.address);
             this.strawberryManager = new this.web3.eth.Contract(
                 StrawberryManager.abi,
                 //StrawberryManager.networks[networkId] &&
                 "0x6a0e49a6cb4ddf6f8a4294b0718a444b1a334e75"
             );
-            console.log("hi!");
-            console.log(StrawberryManager.address);
+
+            console.log("are you undefined? address is: ");
+            console.log(this.strawberryManager._address);
             this.strawberry = new this.web3.eth.Contract(
                 Strawberry.abi,
                 Strawberry.networks[networkId] && Strawberry.address
@@ -62,17 +69,26 @@ class App extends Component {
 
     handleSubmit = async () => {
         const { cost, strawberryName } = this.state;
+        console.log(
+            "Within app.js handleSubmit()... strawberrymanager.address is : "
+        );
         console.log(strawberryName, cost, this.strawberryManager);
         console.log(this.strawberryManager.address);
         let result = await this.strawberryManager.methods
             .createStrawberry(strawberryName, cost)
             .send({ from: this.accounts[0] });
+        console.log("RESULT IS");
         console.log(result);
         alert(
-            "Send " +
+            "Strawberry " +
+                strawberryName +
+                " processed, ready for packaging.\nID is " +
+                result.events.SupplyChainPhase.returnValues._strawberryIndex +
+                "\nSend payment " +
                 cost +
                 " Wei to " +
-                result.events.SupplyChainPhase.returnValues._address
+                result.events.SupplyChainPhase.returnValues._address +
+                " when delivered"
         );
     };
 
@@ -91,7 +107,7 @@ class App extends Component {
         return (
             <div className="App">
                 <h1>Strawberry Supplychain</h1>
-                <h2>Strawberries</h2>
+                <h3>Brought to you by Team Foodies</h3>
                 <h2>Add Strawberries</h2>
                 <div>
                     Cost in Wei:{" "}
@@ -100,8 +116,8 @@ class App extends Component {
                         name="cost"
                         value={this.state.cost}
                         onChange={this.handleInputChange}
-                    />
-                    Strawberry Identifier:{" "}
+                    />{" "}
+                    Strawberry Identifier:
                     <input
                         type="text"
                         name="strawberryName"
@@ -112,20 +128,18 @@ class App extends Component {
                         {" "}
                         Create new item{" "}
                     </button>
-                </div>
-
-                <div>
-                    Strawberry ID :{" "}
-                    <input
-                        type="text"
-                        name="cost"
-                        value=""
-                        onChange={this.handleInputChange}
-                    />
-                    <button type="button" onClick={this.handleSubmit}>
-                        {" "}
-                        Finish Processing{" "}
-                    </button>{" "}
+                    <div>
+                        <Processor
+                            accounts={this.accounts}
+                            strawberryManager={this.strawberryManager}
+                        />
+                    </div>
+                    <div>
+                        <Deliver
+                            accounts={this.accounts}
+                            strawberryManager={this.strawberryManager}
+                        />
+                    </div>
                 </div>
             </div>
         );
