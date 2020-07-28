@@ -4,6 +4,7 @@ import Strawberry from "./contracts/Strawberry.json";
 import getWeb3 from "./getWeb3";
 
 import { Processor } from "./components/Processor";
+import { Deliver } from "./components/Deliver";
 
 import "./App.css";
 
@@ -128,8 +129,13 @@ class App extends Component {
                         Create new item{" "}
                     </button>
                     <div>
-                        {/* <Processor web3={this.web3} /> */}
                         <Processor
+                            accounts={this.accounts}
+                            strawberryManager={this.strawberryManager}
+                        />
+                    </div>
+                    <div>
+                        <Deliver
                             accounts={this.accounts}
                             strawberryManager={this.strawberryManager}
                         />
