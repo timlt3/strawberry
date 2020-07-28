@@ -3,13 +3,16 @@ import StrawberryManager from "./contracts/StrawberryManager.json";
 import Strawberry from "./contracts/Strawberry.json";
 import getWeb3 from "./getWeb3";
 
-import { Processor } from "./components/Processor";
+import { Package } from "./components/Package";
 import { Deliver } from "./components/Deliver";
+import { ChangeStatusWarning } from "./components/ChangeStatusWarning";
+import { ChangeStatusUnfit } from "./components/ChangeStatusUnfit";
+import { ChangeStatusGood } from "./components/ChangeStatusGood";
 
 import "./App.css";
 
 class App extends Component {
-    state = { cost: 0, strawberryName: "example_1", loaded: false };
+    state = { cost: 100, strawberryName: "example_1", loaded: false };
 
     componentDidMount = async () => {
         try {
@@ -58,12 +61,14 @@ class App extends Component {
             .SupplyChainPhase()
             .on("data", async function (evt) {
                 console.log(evt);
-                //if (evt.returnValues._phase === 3) {
-                let itemObj = await self.strawberryManager.methods
-                    .strawberries(evt.returnValues._strawberryIndex)
-                    .call();
-                alert("strawberry " + itemObj._identifier + " has been paid");
-                //}
+                if (evt.returnValues._phase == "3") {
+                    let itemObj = await self.strawberryManager.methods
+                        .strawberries(evt.returnValues._strawberryIndex)
+                        .call();
+                    alert(
+                        "strawberry " + itemObj._identifier + " has been paid"
+                    );
+                }
             });
     };
 
@@ -117,7 +122,7 @@ class App extends Component {
                         value={this.state.cost}
                         onChange={this.handleInputChange}
                     />{" "}
-                    Strawberry Identifier:
+                    Product name:
                     <input
                         type="text"
                         name="strawberryName"
@@ -129,13 +134,31 @@ class App extends Component {
                         Create new item{" "}
                     </button>
                     <div>
-                        <Processor
+                        <Package
                             accounts={this.accounts}
                             strawberryManager={this.strawberryManager}
                         />
                     </div>
                     <div>
                         <Deliver
+                            accounts={this.accounts}
+                            strawberryManager={this.strawberryManager}
+                        />
+                    </div>
+                    <div>
+                        <ChangeStatusWarning
+                            accounts={this.accounts}
+                            strawberryManager={this.strawberryManager}
+                        />
+                    </div>
+                    <div>
+                        <ChangeStatusUnfit
+                            accounts={this.accounts}
+                            strawberryManager={this.strawberryManager}
+                        />
+                    </div>
+                    <div>
+                        <ChangeStatusGood
                             accounts={this.accounts}
                             strawberryManager={this.strawberryManager}
                         />
