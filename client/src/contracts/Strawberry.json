@@ -70,9 +70,9 @@
       "type": "receive"
     }
   ],
-  "metadata": "{\"compiler\":{\"version\":\"0.6.1+commit.e6f7d5a4\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"contract StrawberryManager\",\"name\":\"_parentContract\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"_priceInWei\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_index\",\"type\":\"uint256\"}],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"stateMutability\":\"nonpayable\",\"type\":\"fallback\"},{\"inputs\":[],\"name\":\"index\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"paidWei\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"priceInWei\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"stateMutability\":\"payable\",\"type\":\"receive\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/home/tim/Documents/uni/strawberry/contracts/Strawberry.sol\":\"Strawberry\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/home/tim/Documents/uni/strawberry/contracts/Strawberry.sol\":{\"keccak256\":\"0x417297d726126348e2e5b798a86cdb2ab3b190483d63c7cc597dc1ee9e8a620e\",\"urls\":[\"bzz-raw://bc0bcce2bd790cafc4b228be3ba6a3b9085c02e8dc1f6a90e5cef7686781e626\",\"dweb:/ipfs/QmVqM5PY2cwXetMCjGYBt4UCuhMfvMsWr9wuJaqzBUHp2L\"]},\"/home/tim/Documents/uni/strawberry/contracts/StrawberryManager.sol\":{\"keccak256\":\"0xccb84e62abb495497b7163a1b0302126cfcc58e7249b0bd2796f6c6dfc9139a3\",\"urls\":[\"bzz-raw://3ab72d09539fb1f07a359684864ede9ec3ef1645b8c5c9bd9c98b8edb40943cf\",\"dweb:/ipfs/Qmb5dFksdtTSHYKhssZHZTQqCmKxDd1sPmAYsqx46yuTQ2\"]}},\"version\":1}",
-  "bytecode": "0x608060405234801561001057600080fd5b506040516104ad3803806104ad8339818101604052606081101561003357600080fd5b81019080805190602001909291908051906020019092919080519060200190929190505050816000819055508060028190555082600360006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055505050506103f4806100b96000396000f3fe6080604052600436106100385760003560e01c80632986c0e51461032b5780633c8da5881461035657806383d12eef146103815761031c565b3661031c5760005434146100b4576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004018080602001828103825260118152602001807f66756c6c207061796d656e74206f6e6c7900000000000000000000000000000081525060200191505060405180910390fd5b60006001541461012c576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004018080602001828103825260118152602001807f6974656d207061696420616c726561647900000000000000000000000000000081525060200191505060405180910390fd5b346001600082825401925050819055506000600360009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1634600254604051602401808281526020019150506040516020818303038152906040527f800fb83f000000000000000000000000000000000000000000000000000000007bffffffffffffffffffffffffffffffffffffffffffffffffffffffff19166020820180517bffffffffffffffffffffffffffffffffffffffffffffffffffffffff83818316178352505050506040518082805190602001908083835b6020831061023b5780518252602082019150602081019050602083039250610218565b6001836020036101000a03801982511681845116808217855250505050505090500191505060006040518083038185875af1925050503d806000811461029d576040519150601f19603f3d011682016040523d82523d6000602084013e6102a2565b606091505b5050905080610319576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004018080602001828103825260148152602001807f64656c6976657220646964206e6f7420776f726b00000000000000000000000081525060200191505060405180910390fd5b50005b34801561032857600080fd5b50005b34801561033757600080fd5b506103406103ac565b6040518082815260200191505060405180910390f35b34801561036257600080fd5b5061036b6103b2565b6040518082815260200191505060405180910390f35b34801561038d57600080fd5b506103966103b8565b6040518082815260200191505060405180910390f35b60025481565b60005481565b6001548156fea2646970667358221220d60cd0f500eecfefbee5ef2dbad2a68d7562a875a82404960e9713d4c00669a364736f6c63430006010033",
-  "deployedBytecode": "0x6080604052600436106100385760003560e01c80632986c0e51461032b5780633c8da5881461035657806383d12eef146103815761031c565b3661031c5760005434146100b4576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004018080602001828103825260118152602001807f66756c6c207061796d656e74206f6e6c7900000000000000000000000000000081525060200191505060405180910390fd5b60006001541461012c576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004018080602001828103825260118152602001807f6974656d207061696420616c726561647900000000000000000000000000000081525060200191505060405180910390fd5b346001600082825401925050819055506000600360009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1634600254604051602401808281526020019150506040516020818303038152906040527f800fb83f000000000000000000000000000000000000000000000000000000007bffffffffffffffffffffffffffffffffffffffffffffffffffffffff19166020820180517bffffffffffffffffffffffffffffffffffffffffffffffffffffffff83818316178352505050506040518082805190602001908083835b6020831061023b5780518252602082019150602081019050602083039250610218565b6001836020036101000a03801982511681845116808217855250505050505090500191505060006040518083038185875af1925050503d806000811461029d576040519150601f19603f3d011682016040523d82523d6000602084013e6102a2565b606091505b5050905080610319576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004018080602001828103825260148152602001807f64656c6976657220646964206e6f7420776f726b00000000000000000000000081525060200191505060405180910390fd5b50005b34801561032857600080fd5b50005b34801561033757600080fd5b506103406103ac565b6040518082815260200191505060405180910390f35b34801561036257600080fd5b5061036b6103b2565b6040518082815260200191505060405180910390f35b34801561038d57600080fd5b506103966103b8565b6040518082815260200191505060405180910390f35b60025481565b60005481565b6001548156fea2646970667358221220d60cd0f500eecfefbee5ef2dbad2a68d7562a875a82404960e9713d4c00669a364736f6c63430006010033",
+  "metadata": "{\"compiler\":{\"version\":\"0.6.1+commit.e6f7d5a4\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"contract StrawberryManager\",\"name\":\"_parentContract\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"_priceInWei\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_index\",\"type\":\"uint256\"}],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"stateMutability\":\"nonpayable\",\"type\":\"fallback\"},{\"inputs\":[],\"name\":\"index\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"paidWei\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"priceInWei\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"stateMutability\":\"payable\",\"type\":\"receive\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/home/tim/Documents/uni/strawberry/contracts/Strawberry.sol\":\"Strawberry\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/home/tim/Documents/uni/strawberry/contracts/Strawberry.sol\":{\"keccak256\":\"0x417297d726126348e2e5b798a86cdb2ab3b190483d63c7cc597dc1ee9e8a620e\",\"urls\":[\"bzz-raw://bc0bcce2bd790cafc4b228be3ba6a3b9085c02e8dc1f6a90e5cef7686781e626\",\"dweb:/ipfs/QmVqM5PY2cwXetMCjGYBt4UCuhMfvMsWr9wuJaqzBUHp2L\"]},\"/home/tim/Documents/uni/strawberry/contracts/StrawberryManager.sol\":{\"keccak256\":\"0xffeb45ee09cc7c5e90dc6bac3b3c9359e739cbb0749bd9d3fe17be32f2e623e4\",\"urls\":[\"bzz-raw://c7605defb6037901fe25881b8c733545b91bf6126ac6322d634225add2c12743\",\"dweb:/ipfs/QmUedTzSdFk449JsojsjEYex92T27ecVBQQu1e2tSvR8MQ\"]}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b506040516104ad3803806104ad8339818101604052606081101561003357600080fd5b81019080805190602001909291908051906020019092919080519060200190929190505050816000819055508060028190555082600360006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055505050506103f4806100b96000396000f3fe6080604052600436106100385760003560e01c80632986c0e51461032b5780633c8da5881461035657806383d12eef146103815761031c565b3661031c5760005434146100b4576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004018080602001828103825260118152602001807f66756c6c207061796d656e74206f6e6c7900000000000000000000000000000081525060200191505060405180910390fd5b60006001541461012c576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004018080602001828103825260118152602001807f6974656d207061696420616c726561647900000000000000000000000000000081525060200191505060405180910390fd5b346001600082825401925050819055506000600360009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1634600254604051602401808281526020019150506040516020818303038152906040527f800fb83f000000000000000000000000000000000000000000000000000000007bffffffffffffffffffffffffffffffffffffffffffffffffffffffff19166020820180517bffffffffffffffffffffffffffffffffffffffffffffffffffffffff83818316178352505050506040518082805190602001908083835b6020831061023b5780518252602082019150602081019050602083039250610218565b6001836020036101000a03801982511681845116808217855250505050505090500191505060006040518083038185875af1925050503d806000811461029d576040519150601f19603f3d011682016040523d82523d6000602084013e6102a2565b606091505b5050905080610319576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004018080602001828103825260148152602001807f64656c6976657220646964206e6f7420776f726b00000000000000000000000081525060200191505060405180910390fd5b50005b34801561032857600080fd5b50005b34801561033757600080fd5b506103406103ac565b6040518082815260200191505060405180910390f35b34801561036257600080fd5b5061036b6103b2565b6040518082815260200191505060405180910390f35b34801561038d57600080fd5b506103966103b8565b6040518082815260200191505060405180910390f35b60025481565b60005481565b6001548156fea264697066735822122075e4d057335f43a7d7ddda3c03f43f003debda5b9f07d7f5933e895835a0c4b064736f6c63430006010033",
+  "deployedBytecode": "0x6080604052600436106100385760003560e01c80632986c0e51461032b5780633c8da5881461035657806383d12eef146103815761031c565b3661031c5760005434146100b4576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004018080602001828103825260118152602001807f66756c6c207061796d656e74206f6e6c7900000000000000000000000000000081525060200191505060405180910390fd5b60006001541461012c576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004018080602001828103825260118152602001807f6974656d207061696420616c726561647900000000000000000000000000000081525060200191505060405180910390fd5b346001600082825401925050819055506000600360009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1634600254604051602401808281526020019150506040516020818303038152906040527f800fb83f000000000000000000000000000000000000000000000000000000007bffffffffffffffffffffffffffffffffffffffffffffffffffffffff19166020820180517bffffffffffffffffffffffffffffffffffffffffffffffffffffffff83818316178352505050506040518082805190602001908083835b6020831061023b5780518252602082019150602081019050602083039250610218565b6001836020036101000a03801982511681845116808217855250505050505090500191505060006040518083038185875af1925050503d806000811461029d576040519150601f19603f3d011682016040523d82523d6000602084013e6102a2565b606091505b5050905080610319576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004018080602001828103825260148152602001807f64656c6976657220646964206e6f7420776f726b00000000000000000000000081525060200191505060405180910390fd5b50005b34801561032857600080fd5b50005b34801561033757600080fd5b506103406103ac565b6040518082815260200191505060405180910390f35b34801561036257600080fd5b5061036b6103b2565b6040518082815260200191505060405180910390f35b34801561038d57600080fd5b506103966103b8565b6040518082815260200191505060405180910390f35b60025481565b60005481565b6001548156fea264697066735822122075e4d057335f43a7d7ddda3c03f43f003debda5b9f07d7f5933e895835a0c4b064736f6c63430006010033",
   "sourceMap": "60:799:1:-:0;;;211:228;8:9:-1;5:2;;;30:1;27;20:12;5:2;211:228:1;;;;;;;;;;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;211:228:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;355:11;342:10;:24;;;;384:6;376:5;:14;;;;417:15;400:14;;:32;;;;;;;;;;;;;;;;;;211:228;;;60:799;;;;;;",
   "deployedSourceMap": "60:799:1:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;503:10;;490:9;:23;482:53;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;564:1;553:7;;:12;545:42;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;608:9;597:7;;:20;;;;;;;;;;;628:12;654:14;;;;;;;;;;;646:28;;681:9;756:5;;705:57;;;;;;;;;;;;;;;49:4:-1;39:7;30;26:21;22:32;13:7;6:49;705:57:1;;;;;;;38:4:-1;29:7;25:18;67:10;61:17;96:58;199:8;192:4;186;182:15;179:29;167:10;160:49;0:215;;;705:57:1;646:126;;;;;;;;;;;;;36:153:-1;66:2;61:3;58:11;36:153;;182:3;176:10;171:3;164:23;98:2;93:3;89:12;82:19;;123:2;118:3;114:12;107:19;;148:2;143:3;139:12;132:19;;36:153;;;274:1;267:3;263:2;259:12;254:3;250:22;246:30;315:4;311:9;305:3;299:10;295:26;356:4;350:3;344:10;340:21;389:7;380;377:20;372:3;365:33;3:399;;;646:126:1;;;;;;;;;;;;;;;;;;;;;;;;;12:1:-1;19;14:27;;;;67:4;61:11;56:16;;134:4;130:9;123:4;105:16;101:27;97:43;94:1;90:51;84:4;77:65;157:16;154:1;147:27;211:16;208:1;201:4;198:1;194:12;179:49;5:228;;14:27;32:4;27:9;;5:228;;627:145:1;;;790:7;782:40;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;445:384;60:799;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;60:799:1;;145:20;;8:9:-1;5:2;;;30:1;27;20:12;5:2;145:20:1;;;:::i;:::-;;;;;;;;;;;;;;;;;;;86:25;;8:9:-1;5:2;;;30:1;27;20:12;5:2;86:25:1;;;:::i;:::-;;;;;;;;;;;;;;;;;;;117:22;;8:9:-1;5:2;;;30:1;27;20:12;5:2;117:22:1;;;:::i;:::-;;;;;;;;;;;;;;;;;;;145:20;;;;:::o;86:25::-;;;;:::o;117:22::-;;;;:::o",
   "source": "pragma solidity ^0.6.0;\n\nimport \"./StrawberryManager.sol\";\n\ncontract Strawberry {\n    uint256 public priceInWei;\n    uint256 public paidWei;\n    uint256 public index;\n\n    StrawberryManager parentContract;\n\n    constructor(\n        StrawberryManager _parentContract,\n        uint256 _priceInWei,\n        uint256 _index\n    ) public {\n        priceInWei = _priceInWei;\n        index = _index;\n        parentContract = _parentContract;\n    }\n\n    receive() external payable {\n        require(msg.value == priceInWei, \"full payment only\");\n        require(paidWei == 0, \"item paid already\");\n        paidWei += msg.value;\n        (bool success, ) = address(parentContract).call.value(msg.value)(\n            abi.encodeWithSignature(\"triggerPayment(uint256)\", index)\n        );\n        require(success, \"deliver did not work\");\n    }\n\n    fallback() external {}\n}\n",
@@ -104,7 +104,7 @@
         "id": 39,
         "nodeType": "ImportDirective",
         "scope": 122,
-        "sourceUnit": 437,
+        "sourceUnit": 539,
         "src": "25:33:1",
         "symbolAliases": [],
         "unitAlias": ""
@@ -218,7 +218,7 @@
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_contract$_StrawberryManager_$436",
+              "typeIdentifier": "t_contract$_StrawberryManager_$538",
               "typeString": "contract StrawberryManager"
             },
             "typeName": {
@@ -226,10 +226,10 @@
               "id": 46,
               "name": "StrawberryManager",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 436,
+              "referencedDeclaration": 538,
               "src": "172:17:1",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_StrawberryManager_$436",
+                "typeIdentifier": "t_contract$_StrawberryManager_$538",
                 "typeString": "contract StrawberryManager"
               }
             },
@@ -351,7 +351,7 @@
                       "referencedDeclaration": 47,
                       "src": "400:14:1",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_StrawberryManager_$436",
+                        "typeIdentifier": "t_contract$_StrawberryManager_$538",
                         "typeString": "contract StrawberryManager"
                       }
                     },
@@ -366,13 +366,13 @@
                       "referencedDeclaration": 49,
                       "src": "417:15:1",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_StrawberryManager_$436",
+                        "typeIdentifier": "t_contract$_StrawberryManager_$538",
                         "typeString": "contract StrawberryManager"
                       }
                     },
                     "src": "400:32:1",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_StrawberryManager_$436",
+                      "typeIdentifier": "t_contract$_StrawberryManager_$538",
                       "typeString": "contract StrawberryManager"
                     }
                   },
@@ -405,7 +405,7 @@
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_contract$_StrawberryManager_$436",
+                    "typeIdentifier": "t_contract$_StrawberryManager_$538",
                     "typeString": "contract StrawberryManager"
                   },
                   "typeName": {
@@ -413,10 +413,10 @@
                     "id": 48,
                     "name": "StrawberryManager",
                     "nodeType": "UserDefinedTypeName",
-                    "referencedDeclaration": 436,
+                    "referencedDeclaration": 538,
                     "src": "232:17:1",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_StrawberryManager_$436",
+                      "typeIdentifier": "t_contract$_StrawberryManager_$538",
                       "typeString": "contract StrawberryManager"
                     }
                   },
@@ -521,7 +521,7 @@
                             "name": "msg",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 451,
+                            "referencedDeclaration": 553,
                             "src": "490:3:1",
                             "typeDescriptions": {
                               "typeIdentifier": "t_magic_message",
@@ -597,10 +597,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        454,
-                        455
+                        556,
+                        557
                       ],
-                      "referencedDeclaration": 455,
+                      "referencedDeclaration": 557,
                       "src": "482:7:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
@@ -714,10 +714,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        454,
-                        455
+                        556,
+                        557
                       ],
-                      "referencedDeclaration": 455,
+                      "referencedDeclaration": 557,
                       "src": "545:7:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
@@ -774,7 +774,7 @@
                         "name": "msg",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 451,
+                        "referencedDeclaration": 553,
                         "src": "608:3:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_magic_message",
@@ -896,7 +896,7 @@
                             "name": "abi",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 438,
+                            "referencedDeclaration": 540,
                             "src": "705:3:1",
                             "typeDescriptions": {
                               "typeIdentifier": "t_magic_abi",
@@ -949,7 +949,7 @@
                             "name": "msg",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 451,
+                            "referencedDeclaration": 553,
                             "src": "681:3:1",
                             "typeDescriptions": {
                               "typeIdentifier": "t_magic_message",
@@ -992,7 +992,7 @@
                                 "referencedDeclaration": 47,
                                 "src": "654:14:1",
                                 "typeDescriptions": {
-                                  "typeIdentifier": "t_contract$_StrawberryManager_$436",
+                                  "typeIdentifier": "t_contract$_StrawberryManager_$538",
                                   "typeString": "contract StrawberryManager"
                                 }
                               }
@@ -1000,7 +1000,7 @@
                             "expression": {
                               "argumentTypes": [
                                 {
-                                  "typeIdentifier": "t_contract$_StrawberryManager_$436",
+                                  "typeIdentifier": "t_contract$_StrawberryManager_$538",
                                   "typeString": "contract StrawberryManager"
                                 }
                               ],
@@ -1153,10 +1153,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        454,
-                        455
+                        556,
+                        557
                       ],
-                      "referencedDeclaration": 455,
+                      "referencedDeclaration": 557,
                       "src": "782:7:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
@@ -1277,7 +1277,7 @@
         "id": 39,
         "nodeType": "ImportDirective",
         "scope": 122,
-        "sourceUnit": 437,
+        "sourceUnit": 539,
         "src": "25:33:1",
         "symbolAliases": [],
         "unitAlias": ""
@@ -1391,7 +1391,7 @@
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_contract$_StrawberryManager_$436",
+              "typeIdentifier": "t_contract$_StrawberryManager_$538",
               "typeString": "contract StrawberryManager"
             },
             "typeName": {
@@ -1399,10 +1399,10 @@
               "id": 46,
               "name": "StrawberryManager",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 436,
+              "referencedDeclaration": 538,
               "src": "172:17:1",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_StrawberryManager_$436",
+                "typeIdentifier": "t_contract$_StrawberryManager_$538",
                 "typeString": "contract StrawberryManager"
               }
             },
@@ -1524,7 +1524,7 @@
                       "referencedDeclaration": 47,
                       "src": "400:14:1",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_StrawberryManager_$436",
+                        "typeIdentifier": "t_contract$_StrawberryManager_$538",
                         "typeString": "contract StrawberryManager"
                       }
                     },
@@ -1539,13 +1539,13 @@
                       "referencedDeclaration": 49,
                       "src": "417:15:1",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_StrawberryManager_$436",
+                        "typeIdentifier": "t_contract$_StrawberryManager_$538",
                         "typeString": "contract StrawberryManager"
                       }
                     },
                     "src": "400:32:1",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_StrawberryManager_$436",
+                      "typeIdentifier": "t_contract$_StrawberryManager_$538",
                       "typeString": "contract StrawberryManager"
                     }
                   },
@@ -1578,7 +1578,7 @@
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_contract$_StrawberryManager_$436",
+                    "typeIdentifier": "t_contract$_StrawberryManager_$538",
                     "typeString": "contract StrawberryManager"
                   },
                   "typeName": {
@@ -1586,10 +1586,10 @@
                     "id": 48,
                     "name": "StrawberryManager",
                     "nodeType": "UserDefinedTypeName",
-                    "referencedDeclaration": 436,
+                    "referencedDeclaration": 538,
                     "src": "232:17:1",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_StrawberryManager_$436",
+                      "typeIdentifier": "t_contract$_StrawberryManager_$538",
                       "typeString": "contract StrawberryManager"
                     }
                   },
@@ -1694,7 +1694,7 @@
                             "name": "msg",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 451,
+                            "referencedDeclaration": 553,
                             "src": "490:3:1",
                             "typeDescriptions": {
                               "typeIdentifier": "t_magic_message",
@@ -1770,10 +1770,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        454,
-                        455
+                        556,
+                        557
                       ],
-                      "referencedDeclaration": 455,
+                      "referencedDeclaration": 557,
                       "src": "482:7:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
@@ -1887,10 +1887,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        454,
-                        455
+                        556,
+                        557
                       ],
-                      "referencedDeclaration": 455,
+                      "referencedDeclaration": 557,
                       "src": "545:7:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
@@ -1947,7 +1947,7 @@
                         "name": "msg",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 451,
+                        "referencedDeclaration": 553,
                         "src": "608:3:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_magic_message",
@@ -2069,7 +2069,7 @@
                             "name": "abi",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 438,
+                            "referencedDeclaration": 540,
                             "src": "705:3:1",
                             "typeDescriptions": {
                               "typeIdentifier": "t_magic_abi",
@@ -2122,7 +2122,7 @@
                             "name": "msg",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 451,
+                            "referencedDeclaration": 553,
                             "src": "681:3:1",
                             "typeDescriptions": {
                               "typeIdentifier": "t_magic_message",
@@ -2165,7 +2165,7 @@
                                 "referencedDeclaration": 47,
                                 "src": "654:14:1",
                                 "typeDescriptions": {
-                                  "typeIdentifier": "t_contract$_StrawberryManager_$436",
+                                  "typeIdentifier": "t_contract$_StrawberryManager_$538",
                                   "typeString": "contract StrawberryManager"
                                 }
                               }
@@ -2173,7 +2173,7 @@
                             "expression": {
                               "argumentTypes": [
                                 {
-                                  "typeIdentifier": "t_contract$_StrawberryManager_$436",
+                                  "typeIdentifier": "t_contract$_StrawberryManager_$538",
                                   "typeString": "contract StrawberryManager"
                                 }
                               ],
@@ -2326,10 +2326,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        454,
-                        455
+                        556,
+                        557
                       ],
-                      "referencedDeclaration": 455,
+                      "referencedDeclaration": 557,
                       "src": "782:7:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
@@ -2429,7 +2429,7 @@
   },
   "networks": {},
   "schemaVersion": "3.0.20",
-  "updatedAt": "2020-07-28T07:31:38.805Z",
+  "updatedAt": "2020-07-28T08:17:18.560Z",
   "devdoc": {
     "methods": {}
   },
