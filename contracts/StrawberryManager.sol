@@ -7,7 +7,7 @@ import "./Strawberry.sol";
 
 /*is Ownable*/
 contract StrawberryManager {
-    enum Phases {Processing, Packaging, Delivering, Paid}
+    enum Phases {Processed, Packaged, Delivered, Paid}
     enum Status {Good, Warning, UnfitForSale}
 
     struct S_Strawberry {
@@ -40,7 +40,7 @@ contract StrawberryManager {
         strawberries[strawberryIndex]._strawberry = strawberry;
         strawberries[strawberryIndex]._identifier = _identifier;
         strawberries[strawberryIndex]._priceInWei = _priceInWei;
-        strawberries[strawberryIndex]._phase = Phases.Processing;
+        strawberries[strawberryIndex]._phase = Phases.Processed;
         strawberries[strawberryIndex]._status = Status.Good;
         emit SupplyChainPhase(
             strawberryIndex,
@@ -58,7 +58,7 @@ contract StrawberryManager {
             "only items are allowed to update themselves"
         );
         require(strawberry.priceInWei() == msg.value, "not fully paid yet");
-        require(strawberries[_index]._phase == Phases.Delivering);
+        require(strawberries[_index]._phase == Phases.Delivered);
         strawberries[_index]._phase = Phases.Paid;
         emit SupplyChainPhase(
             _index,
@@ -71,10 +71,10 @@ contract StrawberryManager {
     function package(uint256 _strawberryIndex) public {
         //perform checks like the user is allowed to change the phase
         require(
-            strawberries[_strawberryIndex]._phase == Phases.Processing,
+            strawberries[_strawberryIndex]._phase == Phases.Processed,
             "item is further in the chain"
         );
-        strawberries[_strawberryIndex]._phase = Phases.Packaging;
+        strawberries[_strawberryIndex]._phase = Phases.Packaged;
 
         emit SupplyChainPhase(
             _strawberryIndex,
@@ -87,10 +87,10 @@ contract StrawberryManager {
     function deliver(uint256 _strawberryIndex) public {
         //perform checks like the user is allowed to change the phase
         require(
-            strawberries[_strawberryIndex]._phase == Phases.Packaging,
+            strawberries[_strawberryIndex]._phase == Phases.Packaged,
             "item is further in the chain"
         );
-        strawberries[_strawberryIndex]._phase = Phases.Delivering;
+        strawberries[_strawberryIndex]._phase = Phases.Delivered;
 
         emit SupplyChainPhase(
             strawberryIndex,
@@ -101,10 +101,43 @@ contract StrawberryManager {
     }
 
     function changeStatusWarning(uint256 _strawberryIndex) public {
+        require(
+            strawberries[_strawberryIndex]._status != Status.UnfitForSale,
+            "unfit strawberries cannot be altered"
+        );
         strawberries[_strawberryIndex]._status = Status.Warning;
+
+        emit SupplyChainPhase(
+            _strawberryIndex,
+            uint256(strawberries[_strawberryIndex]._phase),
+            uint256(strawberries[_strawberryIndex]._status),
+            address(_strawberryIndex)
+        );
     }
 
     function changeStatusUnfit(uint256 _strawberryIndex) public {
         strawberries[_strawberryIndex]._status = Status.UnfitForSale;
+
+        emit SupplyChainPhase(
+            _strawberryIndex,
+            uint256(strawberries[_strawberryIndex]._phase),
+            uint256(strawberries[_strawberryIndex]._status),
+            address(_strawberryIndex)
+        );
+    }
+
+    function restoreStatus(uint256 _strawberryIndex) public {
+        require(
+            strawberries[_strawberryIndex]._status != Status.UnfitForSale,
+            "unfit strawberries cannot be altered"
+        );
+        strawberries[_strawberryIndex]._status = Status.Good;
+
+        emit SupplyChainPhase(
+            _strawberryIndex,
+            uint256(strawberries[_strawberryIndex]._phase),
+            uint256(strawberries[_strawberryIndex]._status),
+            address(_strawberryIndex)
+        );
     }
 }
