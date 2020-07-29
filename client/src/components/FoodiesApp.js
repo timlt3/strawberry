@@ -86,6 +86,8 @@ class FoodiesApp extends Component {
             .send({ from: this.accounts[0] });
         console.log("RESULT IS");
         console.log(result);
+        console.log("Send money to");
+        console.log(result.events.SupplyChainPhase.returnValues._address);
         alert(
             "Strawberry " +
                 strawberryName +
