@@ -27,7 +27,7 @@ export class ChangeStatusGood extends Component {
         console.log(this.props.web3);
         console.log(this.props.strawberryManager);
         let result = await this.props.strawberryManager.methods
-            .ChangeStatusGood(strawberryIndex)
+            .changeStatusGood(strawberryIndex)
             .send({ from: this.props.accounts[0] });
         console.log(result);
         alert(

@@ -126,7 +126,7 @@ contract StrawberryManager {
         );
     }
 
-    function restoreStatus(uint256 _strawberryIndex) public {
+    function changeStatusGood(uint256 _strawberryIndex) public {
         require(
             strawberries[_strawberryIndex]._status != Status.UnfitForSale,
             "unfit strawberries cannot be altered"
